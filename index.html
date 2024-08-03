@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Countdown Timers</title>
+    <title>Countdown Timer</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,29 +12,39 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f0f0f0;
+            background-color: #e0f7fa;
+            color: #00695c;
         }
         .container {
             text-align: center;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         h1 {
-            font-size: 2em;
+            font-size: 2.5em;
             margin-bottom: 20px;
+            color: #00796b;
         }
         p {
-            font-size: 1.2em;
-            color: #333;
+            font-size: 1.5em;
+            color: #004d40;
+            font-weight: bold;
+        }
+        .countdown {
+            font-size: 2em;
+            background: linear-gradient(90deg, rgba(0, 150, 136, 0.1), rgba(0, 150, 136, 0.3));
+            border-radius: 8px;
+            padding: 15px;
+            display: inline-block;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>ספירת ימים עד לחנוכת הבית של אור לוי</h1>
-        <p id="counter"></p>
+        <p id="counter" class="countdown"></p>
     </div>
 
     <script>
