@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Countdown Timer</title>
+    <title>Days Counter</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -33,33 +33,17 @@
 </head>
 <body>
     <div class="container">
-        <h1>Countdown Timer</h1>
+        <h1>Days Counter</h1>
         <p id="counter"></p>
     </div>
 
     <script>
         const targetDate = new Date('2024-08-09T20:00:00');
-        
-        function updateCounter() {
-            const now = new Date();
-            const timeDifference = targetDate - now;
+        const currentDate = new Date();
+        const timeDifference = targetDate - currentDate;
+        const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
 
-            if (timeDifference <= 0) {
-                document.getElementById('counter').textContent = 'The time has come!';
-                return;
-            }
-
-            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-
-            document.getElementById('counter').textContent = 
-                `${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`;
-        }
-
-        updateCounter();
-        setInterval(updateCounter, 1000);
+        document.getElementById('counter').textContent = `Days until ${targetDate.toDateString()}: ${daysDifference}`;
     </script>
 </body>
 </html>
